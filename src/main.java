@@ -4,7 +4,9 @@ public class main {
 /* define user requirements
 user logs in
 display how many attack actions they have left that day
-    number of attack actions available resets every 24 hours
+    number of attack actions available resets every 24 hours?
+        or should a user be able to store their actions, up to a certain cap? don't want to punish people who can't
+        play every day. But also don't want to give overwhelming imbalance of power to users who store their actions.
 display number of people in their nation
 display number of oil barrels they have stored
 display number of spies user has
@@ -34,4 +36,7 @@ actions
         how to calculate the success rate? Should be some chance, but primarily stat based?
     how often can I attack or sabotage the same user?
 
+test data
+    I need to either create temp variables that will initialize every time I run the program, or initialize my data in
+    some other way. Mitch suggested serialization? I need to look that up.
 */
