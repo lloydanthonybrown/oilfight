@@ -1,7 +1,3 @@
-public class main {
-}
-
-/* define user requirements
 user logs in
 display how many attack actions they have left that day
     number of attack actions available resets every 24 hours?
@@ -39,4 +35,3 @@ actions
 test data
     I need to either create temp variables that will initialize every time I run the program, or initialize my data in
     some other way. Mitch suggested serialization? I need to look that up.
-*/
