@@ -1,0 +1,71 @@
+user can login or register.
+    If user needs to register, they will set up a username or password
+    If username has already been taken, an error will be displayed
+    Password requirements need to be stated and enforced
+user logs in
+    need to store these credentials in a secure way
+display what rank the user currently is for the current round
+achievements? seems way down the line of things to do.
+    how many days logged in consecutively
+    how many successful offensive actions (compared to failures)
+    how many successful defensive actions (compared to failures)
+    specific ranks - top 100, top 50, top 10, #1?
+display the total number of users registered
+display how many attack actions they have left that day
+    number of attack actions available resets every 24 hours?
+        or should a user be able to store their actions, up to a certain cap? don't want to punish people who can't
+        play every day. But also don't want to give overwhelming imbalance of power to users who store their actions.
+display a countdown to the next turn
+display a countdown to the next round
+display number of people in their nation
+display number of people that will be generated on the next turn
+display number of oil barrels they have stored
+display number of people that will be generated on the next turn
+display number of spies user has
+display number of spies that will be generated on the next turn
+display number of infiltration actions they have left
+display offensive power (calculation)
+    what kind of units will represent offensive power?
+        hockey stick, AK-47, Sherman tank, F-22 Raptor, nuclear missile
+display defensive power
+        cardboard box, shield, reinforced bunker, Surface to Air Guided Weapon (SAGW), anti-ICBM
+    what kind of units will represent defensive power?
+display option to purchase offensive and defensive power
+    how does the user earn money? Is that with barrels? Yes. This forces the user to either spend their barrels
+    on offensive/defensive power, or to risk saving up their barrels in hopes they have enough power to defend it until
+    they can purchase another capacity upgrade
+display option to increase total amount of barrel storage for a high percentage of the owned barrels
+display infrastructure stats
+display option to upgrade infrastructure
+    should this be in the same area as the offensive/defensive purchase options?
+I don't know if I want to pit nation vs nation. What if I chose silly teams instead?
+
+generate barrels on a short iteration
+    how short? how many - how to calculate this in a meaningful way that will scale?
+how to make sure users can only attack or be attacked by others will relatively similar power
+
+actions
+    user can attack other users to steal oil
+    user can sabotage other users oil barrels
+        what is the benefit of this? Increase "points" for this user? Successful attempts increase ability to sabotage
+        without losing spies? what are the potential risks? Spies dying?
+        how to calculate the success rate? Should be some chance, but primarily stat based?
+    how often can I attack or sabotage the same user?
+
+test data
+    I need to either create temp variables that will initialize every time I run the program, or initialize my data in
+    some other way. Mitch suggested serialization? I need to look that up.
+
+Do I need methods that increase or decrease a player's population? What class should own that method?
+What happens when one player attacks another?
+In this class, what kind of datatype should I return? Do I just want to return a double? I'm actually changing
+several things when attacking another player, such as the number of turns I now have left, a message of whether
+or not the attack was successful, the level of success, and the results on both player's populations and oil
+barrels
+
+I need a way to obfuscate how much attack, defense and oil other users have, at some point. Users can discover
+the strengths and weaknesses of other users through spies
+
+Should I give the spies a training ground, so they can be more proficient?
+Should I also have a counter-spy training ground and counter-spies? Or just upgrade the proficiencies in my
+spies at the same place, but choosing "offense" and "defense"
