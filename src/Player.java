@@ -9,6 +9,9 @@ public class Player {
 //    A player may have oil
 //    A player may have offensive power items
 //    A player may have defensive power items
+//    A player may have infrastructure upgrades (the level of oil they can contain
+//    A player may have spies
+//    A player may have spy upgrades/training (for offense and defense) to increase their overall efficiency
 
     public Player(int inputNumberOfTurnsAvailable, String inputName, int inputRank, String inputTeam){
         this.numberOfTurnsAvailable = inputNumberOfTurnsAvailable;
