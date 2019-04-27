@@ -84,3 +84,10 @@ increased spy generation
 increased oil generation?
 
 should I have several automated players?
+
+how do I make this as simple as possible, to start? I just need it up and running, then I can make design changes.
+I need to display the players the current player can attack.
+I need input from the user on which player they want to attack.
+I need to display the results of that attack.
+
+that's it in a nutshell.

@@ -13,6 +13,7 @@ public class Player {
 //    A player may have spies
 //    A player may have spy upgrades/training (for offense and defense) to increase their overall efficiency
 
+//    Contructor for Player class. Do I need additional attributes?
     public Player(int inputNumberOfTurnsAvailable, String inputName, int inputRank, String inputTeam){
         this.numberOfTurnsAvailable = inputNumberOfTurnsAvailable;
         this.name = inputName;
@@ -20,14 +21,9 @@ public class Player {
         this.team = inputTeam;
     }
 
-//    Is this redundant, if I have the setName method?
-    public void changeName(String newName){
-        this.name = newName;
-    }
-
 //    Attack another player
 //    Should this be a String or void type?
-    public String attackPlayer(Player name){
+    public String attackPlayer(Player player){
 //        Decrease the number of turns available by 1 from this action
         this.numberOfTurnsAvailable-=1;
 //        If success=true, return message indicating this, the number of barrels stolen, and the number of the other

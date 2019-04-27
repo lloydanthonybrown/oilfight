@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class OilFight {
@@ -16,34 +17,76 @@ public class OilFight {
 //        System.out.println("Enter an integer:");
 //        int userInputInteger = sc1.nextInt();
 
-          // Create two instances of players, initializing them with basic details
-//        Player player1 = new Player(3,"Lloyd",1,"Russian");
-//        Player player2 = new Player(4,"Greg",2,"American");
-//
-          // Change the first player's name
+//           Create four instances of players, initializing them with basic details
+        Player player1 = new Player(3,"Lloyd",1,"Russian");
+        Player player2 = new Player(4,"Greg",2,"American");
+        Player player3 = new Player(4,"Julie",3,"Welsh");
+        Player player4 = new Player(4,"Diana",4,"Irish");
+
+        System.out.println("You are "+player1.name+" with "+player1.numberOfTurnsAvailable+" turns remaining, on the "+player1.team+" team, at rank " + player1.rank+".");
+        System.out.println("Enter the number of the player you would like to attack, by their rank.");
+        System.out.println(player2.name+", rank " + player2.rank);
+        System.out.println(player3.name+", rank " + player3.rank);
+        System.out.println(player4.name+", rank " + player4.rank);
+
+        String success = "true";
+        Scanner sc = new Scanner(System.in);
+        int userInput = sc.nextInt();
+
+//        Current iteration goal: compare current user's offensive power to defending user's defensive power to determine success.
+//        If atk > def, success, then determine oil stolen, population decrease and decrement number of turns available
+
+//        take user's input to identify target account
+//        a for statement that only repeats once?
+//        determine level of success with somewhat random range, return results
+
+        if(userInput == 2 && success == "true") {
+                System.out.println("Success! You stole 20 barrels of oil. Player 2 also lost 2 population in the attack");
+                System.out.println("You now have 2 turns remaining.");
+        }   else if(userInput == 3 && success == "true"){
+                System.out.println("Success! You stole 20 barrels of oil. Player 3 also lost 2 population in the attack");
+                System.out.println("You now have 2 turns remaining.");
+        }   else if(userInput == 4 && success == "true"){
+                System.out.println("Success! You stole 20 barrels of oil. Player 4 also lost 2 population in the attack");
+                System.out.println("You now have 2 turns remaining.");
+        }   else{
+                System.out.println("Failure!");
+            }
+        }
+
+//        Random rand = new Random();
+//        int randomNumber = rand.nextInt();
+//        int randomNumberWithBound = rand.nextInt(10);
+//        // The println's threw error "unknown class" in regards to the arguments I passed.
+//        // The suggested resolution was to create an int class for both variables. Something specific to Java 11?
+//        System.out.println(randomNumber);
+//        System.out.println(randomNumberWithBound);
+
+
+
+        // Change the first player's name
 //        System.out.println("Player 1's current name: " + player1.name);
 //        player1.changeName("Lloyd 2.0");
 //        System.out.println("Player 1's name after change: " + player1.name);
 
         // Create an array of integers
-        int[] numbers2 = {11, 21, 31, 41, 51};
-        System.out.println(Arrays.toString(numbers2));
-
-        // Create an array of strings
-        String[] myFavoriteCandyBars = {"Twix", "Hershey's", "Crunch"};
-
-        // Play around with printing out specific elements and the entire array
-        System.out.println("Length: " + myFavoriteCandyBars.length);
-        System.out.println("Index 1: " + myFavoriteCandyBars[0]);
-        myFavoriteCandyBars[0]="Snickers";
-        System.out.println("Index 1: " + myFavoriteCandyBars[0]);
-
-        System.out.println(Array.get(myFavoriteCandyBars,2));
-        System.out.println(Arrays.toString(myFavoriteCandyBars));
-
-        Arrays.sort(numbers2);
-        System.out.println(Arrays.toString(numbers2));
-    }
+//        int[] numbers2 = {11, 21, 31, 41, 51};
+//        System.out.println(Arrays.toString(numbers2));
+//
+//        // Create an array of strings
+//        String[] myFavoriteCandyBars = {"Twix", "Hershey's", "Crunch"};
+//
+//        // Play around with printing out specific elements and the entire array
+//        System.out.println("Length: " + myFavoriteCandyBars.length);
+//        System.out.println("Index 1: " + myFavoriteCandyBars[0]);
+//        myFavoriteCandyBars[0]="Snickers";
+//        System.out.println("Index 1: " + myFavoriteCandyBars[0]);
+//
+//        System.out.println(Array.get(myFavoriteCandyBars,2));
+//        System.out.println(Arrays.toString(myFavoriteCandyBars));
+//
+//        Arrays.sort(numbers2);
+//        System.out.println(Arrays.toString(numbers2));
 }
 
 // attack another user
