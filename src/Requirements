@@ -91,3 +91,34 @@ I need input from the user on which player they want to attack.
 I need to display the results of that attack.
 
 that's it in a nutshell.
+
+Advice from Mitch
+- Unique Identifier for players
+- Player has "Aggregate Attack" and "Aggregate Defense"
+- How do we calculate the aggregate? This question is later down the line. Represent items first!
+- Do we need to do that right now? lol nice
+- How are we representing weapons? We will do this later once we build out the item class
+- What fields can we add to the player to represent weapons? Worry about this once we have weapons/items!
+
+- Line 36 "return("You were successful in the attack!");" can be "return "You were successful in the attack!""
+
+- When attacking, how do we know if we were successful when attacking?
+- What is successful? Success is Player1.Attack > Player2.Defense
+- How are we representing the Player1 Attack?
+- How are we representing the Player2 Defense?
+- What are the attack and defense based on? Items (hard code them for now - calculate them next iteration)
+- How are we representing Items? Boom. Gottem.
+
+Items
+- What does an item have? What is an item used for? What do items interact with?
+- Items are interactions between players, they add defense and attack to players
+- One player can have many items (one to many relationship)
+- Fields on the item (what does it have to represent? What attributes are needed for it and it's relationship)
+- Items have an ID, name, attack, defense
+- Example constructor "Item yolo = new Item("Yolo", ID, 15, 0);"
+- How to use yolo's attack: "yolo.attack"
+
+- rename line 26 parameter "player" to be more descriptive - are they attacking? defending?
+
+- Look up: Instance Methods
+- Look up: the "this" keyword

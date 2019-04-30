@@ -4,6 +4,9 @@ public class Player {
     String name;
     int rank; // But rank is a calculation, not just an integer attribute for the player objects
     String team; // what if this needs to be its own object? How would I reference it here?
+    int attack; // calculate this later once I've built out the item class
+    int defense; // calculate this later once I've built out the item class
+    int ID; // later iteration: make this scalable, maybe into a string for a GUID, probably private?
 
 //    Do I need additional attributes?
 //    A player may have oil
@@ -14,18 +17,26 @@ public class Player {
 //    A player may have spy upgrades/training (for offense and defense) to increase their overall efficiency
 
 //    Contructor for Player class. Do I need additional attributes?
-    public Player(int inputNumberOfTurnsAvailable, String inputName, int inputRank, String inputTeam){
+    public Player(int inputNumberOfTurnsAvailable, String inputName, int inputRank, String inputTeam, int attack, int defense){
         this.numberOfTurnsAvailable = inputNumberOfTurnsAvailable;
         this.name = inputName;
         this.rank = inputRank;
         this.team = inputTeam;
+        this.attack = attack;
+        this.defense = defense;
     }
 
 //    Attack another player
 //    Should this be a String or void type?
-    public String attackPlayer(Player player){
+    public void attackPlayer(Player defendingPlayer){
 //        Decrease the number of turns available by 1 from this action
         this.numberOfTurnsAvailable-=1;
+
+        if(this.attack>defendingPlayer.defense){
+            System.out.println( "Success!");
+        } else{
+            System.out.println( "Success!");
+        }
 //        If success=true, return message indicating this, the number of barrels stolen, and the number of the other
 //        player's population decreased
 //        If success=false, return message indicating this, the number of the player's population decreased in the
@@ -33,7 +44,7 @@ public class Player {
 //        I need to make the calculations that show whether the user was successful or not. How do I do that?
 //        I need to compare the attacking user's offensive power, the attacking user's success in decreasing defenses
 //        through spying, the defensive user's defensive power, and the defensive user's resilience
-        return("You were successful in the attack!");
+
     }
 
 //    Infiltrate another player's facilities in an attempt to gather information
