@@ -63,7 +63,7 @@ several things when attacking another player, such as the number of turns I now 
 or not the attack was successful, the level of success, and the results on both player's populations and oil
 barrels
 
-I need a way to obfuscate how much attack, defense and oil other users have, at some point. Users can discover
+I need a way to obfuscate how much attack, defense and oil other users have, at some point. Players can discover
 the strengths and weaknesses of other users through spies
 
 Should I give the spies a training ground, so they can be more proficient?
@@ -81,9 +81,7 @@ Should the number of population directly influence the number of barrels of oil 
 increased attack
 increased defense
 increased spy generation
-increased oil generation?
-
-should I have several automated players?
+increased oil generation? / increased population growth?
 
 how do I make this as simple as possible, to start? I just need it up and running, then I can make design changes.
 I need to display the players the current player can attack.
