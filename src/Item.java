@@ -5,6 +5,7 @@ public class Item {
     int defense;
     // crit success chance? crit failure chance?
     // or just a general range of effectiveness that steadily increases?
+//    durability, or nah?
 
 //    should I have a constructor for each offensive and defensive weapon type? That seems redundant
     public Item(int ID,String name,int attack,int defense){

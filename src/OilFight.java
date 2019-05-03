@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class OilFight {
@@ -6,49 +8,48 @@ public class OilFight {
     public static void main(String[]args) {
 
 //           Create four instances of players, initializing them with basic details
-        Player player1 = new Player(001,3, "Lloyd", 1, "Russian", 10, 10);
-        Player player2 = new Player(002,4, "Greg", 2, "American", 20, 20);
-        Player player3 = new Player(003,4, "Julie", 3, "Welsh", 30, 30);
-        Player player4 = new Player(004,4, "Diana", 4, "Irish", 40, 40);
+        Player player1 = new Player("001",3, "Lloyd", 1, "Russian", 10, 10,100,100);
+        Player player2 = new Player("002",4, "Greg", 2, "American", 20, 20,100,100);
+        Player player3 = new Player("003",4, "Julie", 3, "Welsh", 30, 30,100,100);
+        Player player4 = new Player("004",4, "Diana", 4, "Irish", 40, 40,100,100);
 
         System.out.println("You are " + player1.name + " with " + player1.numberOfTurnsAvailable + " turns remaining, on the " + player1.team + " team, at rank " + player1.rank + ".");
-        System.out.println("Enter the number of the player you would like to attack, by their rank.");
-        System.out.println(player2.name + ", rank " + player2.rank);
-        System.out.println(player3.name + ", rank " + player3.rank);
-        System.out.println(player4.name + ", rank " + player4.rank);
+        System.out.println("Enter the number of the player you would like to attack, by their ID.");
+//        System.out.println(player2.name + ", rank " + player2.rank);
+//        System.out.println(player3.name + ", rank " + player3.rank);
+//        System.out.println(player4.name + ", rank " + player4.rank);
 
-        String success = "true";
+/*
+        Look up primitive types
+        Look up int compared to Integer
+        Look up hashmaps
+ */
+
+//        Mitch suggested putting in this hashmap. I still need to research what this is and how it works.
+        Map<String, Player> playerDatabase = new HashMap<String, Player>();
+        playerDatabase.put(player1.ID, player1);
+        playerDatabase.put(player2.ID, player2);
+        playerDatabase.put(player3.ID, player3);
+        playerDatabase.put(player4.ID, player4);
+
+//        I took this out of the equation, but I'll need to evaluate success somewhere. Where?
+//        String success = "true";
         Scanner sc = new Scanner(System.in);
-        int userInput = sc.nextInt();
+        String userInput = sc.next();
 
 //        Current iteration goal: compare current user's offensive power to defending user's defensive power to determine success.
 //        If atk > def, success, then determine oil stolen, population decrease and decrement number of turns available
 
-//        this section isn't super helpful anymore, because I want to compare a real player to a defending player
-        if (userInput == 2 && success == "true") {
-            System.out.println("Success! You stole 20 barrels of oil. Player 2 also lost 2 population in the attack");
-            System.out.println("You now have 2 turns remaining.");
-        } else if (userInput == 3 && success == "true") {
-            System.out.println("Success! You stole 20 barrels of oil. Player 3 also lost 2 population in the attack");
-            System.out.println("You now have 2 turns remaining.");
-        } else if (userInput == 4 && success == "true") {
-            System.out.println("Success! You stole 20 barrels of oil. Player 4 also lost 2 population in the attack");
-            System.out.println("You now have 2 turns remaining.");
+//          Test is failing. Keep receiving "a failed attempt" response from line 36.
+        if (userInput == "002") {
+            player1.attackPlayer(player2);
+        } else if (userInput == "003") {
+            player1.attackPlayer(player3);
+        } else if (userInput == "004") {
+            player1.attackPlayer(player4);
         } else {
             System.out.println("A failed attempt!");
         }
-
-//        This is one of the later "tough" problems I was trying to solve.
-//        Goal: have the current player enter the ID/name of a player they want to attack, and determine outcome.
-//        System.out.println("Enter the name of the player you would like to attack.");
-//        Player attackThisPlayer = sc.next();
-//        player1.attackPlayer(attackThisPlayer);
-
-        // Change the first player's name
-//        I'm keeping this around as an example of how I could use a void method to update a value for my instanced players
-//        System.out.println("Player 1's current name: " + player1.name);
-//        player1.changeName("Lloyd 2.0");
-//        System.out.println("Player 1's name after change: " + player1.name);
 
     }
 }
