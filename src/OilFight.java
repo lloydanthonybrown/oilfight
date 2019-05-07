@@ -7,74 +7,64 @@ public class OilFight {
 //    main method
     public static void main(String[]args) {
 
-//           Create four instances of players, initializing them with basic details
+//           Create four instances of players, initializing them with the basics from their constructor.
         Player player1 = new Player("001",3, "Lloyd", 1, "Russian", 10, 10,100,100);
         Player player2 = new Player("002",4, "Greg", 2, "American", 20, 20,100,100);
         Player player3 = new Player("003",4, "Julie", 3, "Welsh", 30, 30,100,100);
         Player player4 = new Player("004",4, "Diana", 4, "Irish", 40, 40,100,100);
 
-//        Mitch suggested putting in this hashmap. I still need to research what this is and how it works.
+//          Create a simple database through a HashMap.
         Map<String, Player> playerDatabase = new HashMap<String, Player>();
         playerDatabase.put(player1.ID, player1);
         playerDatabase.put(player2.ID, player2);
         playerDatabase.put(player3.ID, player3);
         playerDatabase.put(player4.ID, player4);
 
+//          Create a Scanner to hold user input.
         Scanner sc = new Scanner(System.in);
 
-//        Get attacking user
+//          Get attacking user.
         System.out.println("Enter the ID of the user who is attacking.");
         String attackingUser = sc.next();
         System.out.println("The attacker is " + attackingUser + ".");
 
-//        Get defending user
+//          Get defending user.
         System.out.println("Enter the ID of the user who is defending.");
         String defendingUser = sc.next();
         System.out.println("The defender is " + defendingUser + ".");
 
-//        Compare and determine success
+//          Determine success from user input gathered.
         if(playerDatabase.containsKey(attackingUser)){
             System.out.println("Valid attacking user.");
             if(playerDatabase.containsKey(defendingUser)){
                 System.out.println("Valid defending user.");
-//                Here I need to actually compare the attack and defense values of the two players in question
-//                How do I reference those players?
+                //        If atk > def, success, then determine oil stolen, population decrease and decrement number of turns available
                 if(playerDatabase.get(attackingUser).attack>playerDatabase.get(defendingUser).defense){
                     System.out.println("Attack successful!");
+                    //        Edit attacking and defending player values of oil, population and turns
+                    //        Break this out into its own method at some point, or using existing attackPlayer method
                 }
                 else{
                     System.out.println("Attack failed!");
                 }
             }
+            else{
+                System.out.println("That is not a valid ID for a defending user.");
+            }
+        }
+        else{
             System.out.println("That is not a valid ID for an attacking user.");
         }
-//        Edit hashmap values accordingly
-//        Can a hashmap key contain multiple values?
 
 
-//        Current iteration goal: compare current user's offensive power to defending user's defensive power to determine success.
-//        If atk > def, success, then determine oil stolen, population decrease and decrement number of turns available
-
-//        Based on my research on primitive types, maybe a char or byte would be better than a string for player ID? But maybe not.
-//          Test is failing. Keep receiving "a failed attempt" response from line 36.
-//        if (userInput == "002") {
-//            player1.attackPlayer(player2);
-//        } else if (userInput == "003") {
-//            player1.attackPlayer(player3);
-//        } else if (userInput == "004") {
-//            player1.attackPlayer(player4);
-//        } else {
-//            System.out.println("A failed attempt!");
-//        }
 
     }
 }
 
 // next steps
-// attack another user
 // show all users. Later iteration: show users per rank per page (10 per page? 100?)
 // if successful, steal oil, blow up a small portion of oil, and kill a small percentage of population
-// compare offensive to defensive power to determine success
+// show changes in oil, population and number of turns after an attack
 // offensive power is determined by value of all offensive items owned by the attacker, as well as a bonus from spy training
 // defensive power is determined by value of all defensive items owned by the defender, as well as a bonus from their infrastructure
 // how much information can users normally tell about other users? Just their rank?
