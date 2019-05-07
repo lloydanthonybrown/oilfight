@@ -9,8 +9,7 @@ public class Player {
     int defense; // calculate this later once I've built out the item class
     int oil;
     int population;
-//    Seriously considering adding oil as an attribute. Getters and setters for it make sense because I'm allowing users
-//    to purchase weapons with oil.
+//      I need to review what data types my attributes should have. Should I rely on primitive data types for some of these?
 
 //    Do I need additional attributes?
 //    A player may have oil
@@ -21,7 +20,7 @@ public class Player {
 //    A player may have spy upgrades/training (for offense and defense) to increase their overall efficiency
 
 //    Constructor for Player class
-    public Player(String ID,int numberOfTurnsAvailable, String name, int rank, String team, int attack, int defense, int oil, int population){
+    public Player(String ID, int numberOfTurnsAvailable, String name, int rank, String team, int attack, int defense, int oil, int population){
         this.ID = ID;
         this.numberOfTurnsAvailable = numberOfTurnsAvailable;
         this.name = name;

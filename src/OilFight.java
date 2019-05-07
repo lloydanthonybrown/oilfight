@@ -13,18 +13,6 @@ public class OilFight {
         Player player3 = new Player("003",4, "Julie", 3, "Welsh", 30, 30,100,100);
         Player player4 = new Player("004",4, "Diana", 4, "Irish", 40, 40,100,100);
 
-        System.out.println("You are " + player1.name + " with " + player1.numberOfTurnsAvailable + " turns remaining, on the " + player1.team + " team, at rank " + player1.rank + ".");
-        System.out.println("Enter the number of the player you would like to attack, by their ID.");
-//        System.out.println(player2.name + ", rank " + player2.rank);
-//        System.out.println(player3.name + ", rank " + player3.rank);
-//        System.out.println(player4.name + ", rank " + player4.rank);
-
-/*
-        Look up primitive types
-        Look up int compared to Integer
-        Look up hashmaps
- */
-
 //        Mitch suggested putting in this hashmap. I still need to research what this is and how it works.
         Map<String, Player> playerDatabase = new HashMap<String, Player>();
         playerDatabase.put(player1.ID, player1);
@@ -32,24 +20,52 @@ public class OilFight {
         playerDatabase.put(player3.ID, player3);
         playerDatabase.put(player4.ID, player4);
 
-//        I took this out of the equation, but I'll need to evaluate success somewhere. Where?
-//        String success = "true";
         Scanner sc = new Scanner(System.in);
-        String userInput = sc.next();
+
+//        Get attacking user
+        System.out.println("Enter the ID of the user who is attacking.");
+        String attackingUser = sc.next();
+        System.out.println("The attacker is " + attackingUser + ".");
+
+//        Get defending user
+        System.out.println("Enter the ID of the user who is defending.");
+        String defendingUser = sc.next();
+        System.out.println("The defender is " + defendingUser + ".");
+
+//        Compare and determine success
+        if(playerDatabase.containsKey(attackingUser)){
+            System.out.println("Valid attacking user.");
+            if(playerDatabase.containsKey(defendingUser)){
+                System.out.println("Valid defending user.");
+//                Here I need to actually compare the attack and defense values of the two players in question
+//                How do I reference those players?
+                if(playerDatabase.get(attackingUser).attack>playerDatabase.get(defendingUser).defense){
+                    System.out.println("Attack successful!");
+                }
+                else{
+                    System.out.println("Attack failed!");
+                }
+            }
+            System.out.println("That is not a valid ID for an attacking user.");
+        }
+//        Edit hashmap values accordingly
+//        Can a hashmap key contain multiple values?
+
 
 //        Current iteration goal: compare current user's offensive power to defending user's defensive power to determine success.
 //        If atk > def, success, then determine oil stolen, population decrease and decrement number of turns available
 
+//        Based on my research on primitive types, maybe a char or byte would be better than a string for player ID? But maybe not.
 //          Test is failing. Keep receiving "a failed attempt" response from line 36.
-        if (userInput == "002") {
-            player1.attackPlayer(player2);
-        } else if (userInput == "003") {
-            player1.attackPlayer(player3);
-        } else if (userInput == "004") {
-            player1.attackPlayer(player4);
-        } else {
-            System.out.println("A failed attempt!");
-        }
+//        if (userInput == "002") {
+//            player1.attackPlayer(player2);
+//        } else if (userInput == "003") {
+//            player1.attackPlayer(player3);
+//        } else if (userInput == "004") {
+//            player1.attackPlayer(player4);
+//        } else {
+//            System.out.println("A failed attempt!");
+//        }
 
     }
 }
