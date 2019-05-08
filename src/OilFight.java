@@ -47,7 +47,7 @@ public class OilFight {
                     playerDatabase.get(attackingPlayer).setOil(attackingPlayerNewOil);
 
 //                    Decrease defending player's oil
-                    int defendingPlayerNewOil = (int) Math.round(.1 * playerDatabase.get(defendingPlayer).getOil()) - playerDatabase.get(defendingPlayer).getOil();
+                    int defendingPlayerNewOil = playerDatabase.get(defendingPlayer).getOil() - (int) Math.round(.1 * playerDatabase.get(defendingPlayer).getOil());
                     playerDatabase.get(defendingPlayer).setOil((defendingPlayerNewOil));
 
 //                    Decrease attacking player's number of turns available
@@ -69,7 +69,8 @@ public class OilFight {
             System.out.println("That is not a valid ID for an attacking user.");
         }
 
-
+        System.out.println("The attacking player now has " + playerDatabase.get(attackingPlayer).getOil() + " barrels of oil.");
+        System.out.println("The defending player now has " + playerDatabase.get(defendingPlayer).getOil() + " barrels of oil.");
 
     }
 }
