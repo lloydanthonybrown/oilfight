@@ -51,10 +51,14 @@ public class OilFight {
                     playerDatabase.get(defendingPlayer).setOil((defendingPlayerNewOil));
 
 //                    Decrease attacking player's number of turns available
+                    int attackingPlayerNewNumberOfTurns = playerDatabase.get(attackingPlayer).getNumberOfTurnsAvailable() - 1;
+                    playerDatabase.get(attackingPlayer).setNumberOfTurnsAvailable(attackingPlayerNewNumberOfTurns);
+
 //                    Decrease defending player's population
+                    int defendingPlayerNewPopulation = playerDatabase.get(defendingPlayer).getPopulation() - (int) Math.round(.1 * playerDatabase.get(defendingPlayer).getPopulation());
+                    playerDatabase.get(defendingPlayer).setPopulation(defendingPlayerNewPopulation);
 
                     System.out.println("Attack successful!");
-                    //        Edit attacking and defending player values of oil, population and turns
                     //        Break this out into its own method at some point, or using existing attackPlayer method
                 }
                 else{

@@ -99,6 +99,7 @@ public class Player {
     }
 
     public void setNumberOfTurnsAvailable(int numberOfTurnsAvailable) {
+//        I should probably have an if statement in here that keeps me from going below 0.
         this.numberOfTurnsAvailable = numberOfTurnsAvailable;
     }
 
@@ -120,6 +121,12 @@ public class Player {
         this.oil = oil;
     }
 
+    public int getPopulation(){
+        return population;
+    }
 
+    public void setPopulation(int population){
+        this.population = population;
+    }
 
 }
