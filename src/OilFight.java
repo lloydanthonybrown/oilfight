@@ -25,21 +25,34 @@ public class OilFight {
 
 //          Get attacking user.
         System.out.println("Enter the ID of the user who is attacking.");
-        String attackingUser = sc.next();
-        System.out.println("The attacker is " + attackingUser + ".");
+        String attackingPlayer = sc.next();
+        System.out.println("The attacker is " + attackingPlayer + ".");
 
 //          Get defending user.
         System.out.println("Enter the ID of the user who is defending.");
-        String defendingUser = sc.next();
-        System.out.println("The defender is " + defendingUser + ".");
+        String defendingPlayer = sc.next();
+        System.out.println("The defender is " + defendingPlayer + ".");
 
 //          Determine success from user input gathered.
-        if(playerDatabase.containsKey(attackingUser)){
+        if(playerDatabase.containsKey(attackingPlayer)){
             System.out.println("Valid attacking user.");
-            if(playerDatabase.containsKey(defendingUser)){
+            if(playerDatabase.containsKey(defendingPlayer)){
                 System.out.println("Valid defending user.");
                 //        If atk > def, success, then determine oil stolen, population decrease and decrement number of turns available
-                if(playerDatabase.get(attackingUser).attack>playerDatabase.get(defendingUser).defense){
+                if(playerDatabase.get(attackingPlayer).attack>playerDatabase.get(defendingPlayer).defense){
+
+//                    There's gotta be a better way than doing all of this in my main
+//                    Increase attacking player's oil
+                    int attackingPlayerNewOil = (int) Math.round(.1 * playerDatabase.get(attackingPlayer).getOil()) + playerDatabase.get(attackingPlayer).getOil();
+                    playerDatabase.get(attackingPlayer).setOil(attackingPlayerNewOil);
+
+//                    Decrease defending player's oil
+                    int defendingPlayerNewOil = (int) Math.round(.1 * playerDatabase.get(defendingPlayer).getOil()) - playerDatabase.get(defendingPlayer).getOil();
+                    playerDatabase.get(defendingPlayer).setOil((defendingPlayerNewOil));
+
+//                    Decrease attacking player's number of turns available
+//                    Decrease defending player's population
+
                     System.out.println("Attack successful!");
                     //        Edit attacking and defending player values of oil, population and turns
                     //        Break this out into its own method at some point, or using existing attackPlayer method

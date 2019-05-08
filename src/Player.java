@@ -111,5 +111,15 @@ public class Player {
         this.team = team;
     }
 
+//    Getter and setter for oil attribute
+    public int getOil(){
+        return oil;
+    }
+
+    public void setOil(int oil){
+        this.oil = oil;
+    }
+
+
 
 }
