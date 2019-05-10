@@ -35,19 +35,31 @@ public class Player {
 //    Attack another player
 //    Should this be a String or void type? I want to return a message of success or failure, so a String?
     public String attackPlayer(Player defendingPlayer){
+//      Decrease attacking player's number of turns available, no matter if the attack was successful or not
         this.numberOfTurnsAvailable -= 1;
 
         if(attack > defendingPlayer.defense){
+
+//      Increase attacking player's oil
+            int attackingPlayerNewOil = (int) Math.round(.1 * this.getOil()) + this.getOil();
+            this.setOil(attackingPlayerNewOil);
+
+//      Decrease defending player's oil
+            int defendingPlayerNewOil = defendingPlayer.getOil() - (int) Math.round(.1 * defendingPlayer.getOil()) ;
+            defendingPlayer.setOil(defendingPlayerNewOil);
+
+//      Decrease defending player's population
+            int defendingPlayerNewPopulation = defendingPlayer.getPopulation() - (int) Math.round(.1 * defendingPlayer.getPopulation());
+            defendingPlayer.setPopulation(defendingPlayerNewPopulation);
+
             return "Success!";
         } else{
             return "Failure :(";
         }
-//        If success=true, return message indicating this, the number of barrels stolen, and the number of the other
-//        player's population decreased
-//        If success=false, return message indicating this, the number of the player's population decreased in the
-//        attack
-//        I need to compare the attacking user's offensive power, the attacking user's success in decreasing defenses
-//        through spying, the defensive user's defensive power, and the defensive user's resilience
+
+//  compare the attacking user's offensive power, the attacking user's success in decreasing defenses through spying, the defensive user's defensive power, and the defensive user's resilience
+//  comment about how much oil was stolen, and how much population was destroyed in the process to illustrate the success of the attack
+//  put a history of actions that occurred while a player was logged out (mostly defensive, or all actions total and highlighting defensive actions?)
     }
 
 //    Infiltrate another player's facilities in an attempt to gather information
@@ -85,6 +97,7 @@ public class Player {
     }
 
     //    Getter and setter for rank attribute
+//    future iteration: make a method for determining a user's rank. Might be fairly complex to determine.
     public int getRank() {
         return rank;
     }
@@ -99,8 +112,12 @@ public class Player {
     }
 
     public void setNumberOfTurnsAvailable(int numberOfTurnsAvailable) {
-//        I should probably have an if statement in here that keeps me from going below 0.
-        this.numberOfTurnsAvailable = numberOfTurnsAvailable;
+        if(this.numberOfTurnsAvailable == 0){
+            System.out.println("Cannot have fewer than 0 turns.");
+        }
+        else{
+            this.numberOfTurnsAvailable = numberOfTurnsAvailable;
+        }
     }
 
 //    Getter and setter for team attribute
