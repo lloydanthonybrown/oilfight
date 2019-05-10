@@ -8,6 +8,8 @@ public class OilFight {
     public static void main(String[] args) {
 
         setup();
+//        how can I make my main read like a book?
+//        how do I move more of the calculations and setup details into their own methods to make this more simple?
 
         // Create four instances of players, initializing them with the details of their constructor.
         Player player1 = new Player("001", 3, "Lloyd", 1, "Russian", 10, 10, 100, 100);
@@ -59,8 +61,9 @@ public class OilFight {
     }
 
     private static void setup(){
-// I tried to move my player instancing and player hashmap down here, but my user input variables couldn't reference the hashmap
-//        Should I create a new....heck, I don't know.
+//      I tried to move my player instancing and player hashmap down here, but my user input variables couldn't reference the hashmap
+//      how do I fix this?
+
     }
 }
 // next steps
